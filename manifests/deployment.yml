@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: razurepipeline 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: razurepipeline
+  template:
+    metadata:
+      labels:
+        app: razurepipeline 
+    spec:
+      containers:
+        - name: razurepipeline 
+          image: onlyregistryhere.azurecr.io/razurepipeline
+          ports:
+          - containerPort: 8000
